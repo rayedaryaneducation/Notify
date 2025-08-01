@@ -20,58 +20,5 @@
         
     </ul>
 </body>
-<script>
-    const deleteBtn = document.getElementById('delete-btn')
-    const list = document.getElementById('ul-list')
-    const error = document.getElementById('error')
-    const input = document.getElementById('note')
-    const notesDisplay = document.getElementById('notesDisplay')
-    const note = document.getElementById('note')
-    const svaeBtn = document.getElementById('svae-btn')
-    const showBtn = document.getElementById('show-btn')
-    const hideBtn = document.getElementById('hide-btn')
-    let arr = JSON.parse(localStorage.getItem('note')) || []
-    function save(){
-        const noteText = note.value.trim()
-        arr = JSON.parse(localStorage.getItem('note')) || []
-        error.innerHTML = ''
-        if(!noteText) return
-        if (!arr.includes(noteText)){
-            arr.push(noteText)
-            localStorage.setItem('note', JSON.stringify(arr)) 
-        } else if (arr.includes(note.value)){
-            error.innerHTML += `<p id = 'error'>Note already saved</p>`
-        }
-        note.value = ''
-    }
-    function show(){
-        
-        const showing = JSON.parse(localStorage.getItem('note'))
-        
-        for (let i = 0; i < showing.length; i++){
-            list.innerHTML += `<li id = ${i}> ${showing[i]} <button class = 'delete-this' onclick = 'deleteThis(${i})'>X</button></li>`
-        }
-    }
-    function hide(){
-        list.innerHTML = ''
-    }
-    function deleteALL(){
-        localStorage.removeItem('note')
-        hide()
-    }
-    note.addEventListener('keydown', 
-        function (e){
-            if (e.key === 'Enter'){
-                save()
-            }
-        }
-    )
-    function deleteThis(index){
-        arr.splice(index)
-        localStorage.removeItem('note')
-        localStorage.setItem('note', JSON.stringify(arr))
-        show()
-
-    }
-</script>
+<script src = 'index.js'></script>
 </html>
