@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Notify",
+  "version": "1.0",
+  "description": "A simple note-taking extension using internal storage.",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "images/N.png"
+  },
+  "icons": {
+    "16": "images/N.png",
+    "48": "images/N.png",
+    "128": "images/N.png"
+  },
+  "author": "Rayed Aryan"
+}
