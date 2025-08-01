@@ -28,16 +28,20 @@ input {
 .button-group {
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-start;
     gap: 10px;
 }
 
 #save-btn, #show-btn, #hide-btn, #delete-btn {
+    flex: 1 1 45%;
+    min-width: 130px;
+    text-align: center;
     cursor: pointer;
     background-color: black;
     color: white;
     border: none;
-    font-size: 20px;
-    padding: 10px 20px;
+    font-size: 18px;
+    padding: 10px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -84,4 +88,5 @@ ul {
 }
 
 .delete-this:hover {
-    translate: -1px -1px
+    translate: -1px -1px;
+}
