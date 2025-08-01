@@ -1,6 +1,7 @@
 html, body{
     min-width: 300px;
     width: 300px;
+}
 body{
     display: flex;
     flex-direction: column;
