@@ -1,20 +1,37 @@
-html, body{
-    min-width: 300px;
-    width: 600px;
+* {
+    box-sizing: border-box;
 }
-body{
+
+html, body {
+    min-width: 300px;
+    max-width: 400px;
+    margin: 0;
+    padding: 20px;
+    background-color: white;
+    font-family: sans-serif;
+}
+
+body {
     display: flex;
     flex-direction: column;
+    gap: 15px;
 }
+
 input {
     border: 4px solid black;
     border-radius: 0px;
     height: 50px;
-    width: 250px;
+    width: 100%;
+    padding: 5px 10px;
 }
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 #save-btn, #show-btn, #hide-btn, #delete-btn {
-    margin-top: 10px;
-    margin-right: 5px;
     cursor: pointer;
     background-color: black;
     color: white;
@@ -24,12 +41,13 @@ input {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#save-btn:hover, #show-btn:hover, #hide-btn:hover, #delete-btn:hover{
+#save-btn:hover, #show-btn:hover, #hide-btn:hover, #delete-btn:hover {
     background-color: white;
     color: black;
     box-shadow: 2px 2px 2px black;
 }
-ul li{
+
+ul li {
     list-style: none;
     margin-left: 0px;
     background-color: white;
@@ -39,16 +57,17 @@ ul li{
     border-radius: 6px;
     margin-top: 10px;
     position: relative;
-    
-
 }
-ul{
+
+ul {
     padding-left: 0px;
 }
+
 #error {
     color: red;
 }
-.delete-this{
+
+.delete-this {
     background-color: rgb(209, 0, 0);
     font-weight: 1000;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -57,16 +76,12 @@ ul{
     border-radius: 50%;
     padding: 5px 10px;
     cursor: pointer;
-    box-shadow: 2px 1px  black;
+    box-shadow: 2px 1px black;
     position: absolute;
     right: 20px;
     top: 5px;
     bottom: 5px;
-    
-    
 }
-.delete-this:hover{
-    translate: -1px -1px;
-    
-    
-}
+
+.delete-this:hover {
+    translate: -1px -1px
