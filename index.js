@@ -61,15 +61,14 @@ function showNotes() {
   }
 }
 
-// Function to hide the list of notes
 
 
 // Function to delete all notes
 function deleteAllNotes() {
   localStorage.removeItem('notes');
-  notes = []; // Clear the notes array
-  renderNotes(); // Re-render the list (will show 'No notes yet.')
-  hideNotes();
+  notes = []; 
+  renderNotes(); 
+  showNotes();
 }
 
 // Add event listeners to the buttons and input field
@@ -77,7 +76,6 @@ document.addEventListener('DOMContentLoaded', renderNotes);
 saveBtn.addEventListener('click', saveNote);
 deleteBtn.addEventListener('click', deleteAllNotes);
 showBtn.addEventListener('click', showNotes);
-hideBtn.addEventListener('click', hideNotes);
 noteInput.addEventListener('keydown', (e) => {
   if (e.key === 'Enter') {
     saveNote();
