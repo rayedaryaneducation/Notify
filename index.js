@@ -4,8 +4,7 @@ const list = document.getElementById('ul-list');
 const error = document.getElementById('error');
 const noteInput = document.getElementById('note');
 const saveBtn = document.getElementById('save-btn');
-const showBtn = document.getElementById('show-btn');
-const hideBtn = document.getElementById('hide-btn');
+const showBtn = document.getElementById('show-hide-btn');
 
 let notes = JSON.parse(localStorage.getItem('notes')) || [];
 
@@ -54,7 +53,8 @@ function deleteThis(index) {
 // Function to show the list of notes
 function showNotes() {
   renderNotes();
-  list.style.display = 'block';
+  list.style.display = list.style.display === 'block' ? 'none':'block'
+  showBtn.textContent = showBtn.textContent === 'SHOW' ? 'HIDE':'SHOW'
   if (notes.length === 0) {
     list.innerHTML = '<li>No notes yet.</li>';
     return;
@@ -62,9 +62,7 @@ function showNotes() {
 }
 
 // Function to hide the list of notes
-function hideNotes() {
-  list.style.display = 'none';
-}
+
 
 // Function to delete all notes
 function deleteAllNotes() {
