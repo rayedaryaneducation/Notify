@@ -32,7 +32,7 @@ input {
     gap: 10px;
 }
 
-#save-btn, #show-btn, #hide-btn, #delete-btn {
+#save-btn, #show-hide-btn, #delete-btn {
     flex: 1 1 45%;
     min-width: 130px;
     text-align: center;
@@ -45,7 +45,7 @@ input {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-#save-btn:hover, #show-btn:hover, #hide-btn:hover, #delete-btn:hover {
+#save-btn:hover, #show-hide-btn:hover, #delete-btn:hover {
     background-color: white;
     color: black;
     box-shadow: 2px 2px 2px black;
