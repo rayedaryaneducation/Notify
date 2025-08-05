@@ -15,7 +15,7 @@ function renderNotes() {
   
   notes.forEach((note, index) => {
     const li = document.createElement('li');
-    li.innerHTML = `${note} <button class="delete-this" onclick="deleteThis(${index})">X</button>`;
+    li.innerHTML = `${note} <button class="delete-this" data-index = "${index}">X</button>`;
     list.appendChild(li);
   });
 }
@@ -72,7 +72,17 @@ function deleteAllNotes() {
 }
 
 // Add event listeners to the buttons and input field
-document.addEventListener('DOMContentLoaded', renderNotes);
+document.addEventListener('DOMContentLoaded', () =>{
+  renderNotes()
+  list.addEventListener('click', (e) => {
+    if (e.target.classList.contains('delete-this')){
+      const index = parseInt(e.target.dataset.index, 10)
+      deleteThis(index)
+    }
+  })
+}
+
+)
 saveBtn.addEventListener('click', saveNote);
 deleteBtn.addEventListener('click', deleteAllNotes);
 showBtn.addEventListener('click', showNotes);
